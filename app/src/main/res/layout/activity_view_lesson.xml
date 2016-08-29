@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lessons_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    tools:context=".ViewLessonActivity">
+
+    <LinearLayout
+        android:id="@+id/lessons_activity_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/lessons_home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_home_white_24dp" />
+
+        <ProgressBar
+            android:id="@+id/lessons_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_zoom_out_map_white_24dp" />
+
+    </LinearLayout>
+
+    <link.fls.swipestack.SwipeStack
+        android:id="@+id/lessons_stack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:padding="20dp"
+        android:visibility="visible"
+        app:allowed_swipe_directions="both"
+        app:stack_rotation="0"
+        app:stack_spacing="8dp" />
+
+    <LinearLayout
+        android:id="@+id/lesson_complete_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/lesson_complete_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Lesson Complete"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/shape_oval_white"
+                    android:padding="30dp"
+                    android:src="@drawable/check"
+                    android:tint="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:text="Let us know if you like\n this lesson?"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lessons_emoji_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lesson_complete_header_container"
+                android:layout_marginBottom="30dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/lessons_selected_emoji_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/lessons_selected_emoji_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:padding="10dp"
+                    android:text="Rate Us"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ro.andreidobrescu.emojilike.EmojiLikeView
+                android:id="@+id/lessons_emoji_container"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_alignBottom="@+id/lessons_emoji_rate"
+                android:layout_gravity="top"
+                android:layout_marginTop="10dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/lesson_complete_home_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lessons_emoji_rate"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorSecondaryText"
+                android:drawableLeft="@drawable/ic_home_white_24dp"
+                android:drawablePadding="10dp"
+                android:text="Back To Home"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
